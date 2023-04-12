@@ -368,6 +368,7 @@ messageButton?.addEventListener("click", () => {
 
 socket.on("addAnimal", (data) => {
   console.log(data);
+  updateAnimals();
   // open modal
   targetModal.innerHTML = createMessageModal(data);
   myModal.show();
@@ -378,6 +379,7 @@ socket.on("addAnimal", (data) => {
 
 socket.on("addSpecies", (data) => {
   console.log(data);
+  updateSpecies();
   // open modal
   targetModal.innerHTML = createMessageModal(data);
   myModal.show();
