@@ -363,5 +363,25 @@ const socket: Socket<ServerToClientEvents, ClientToServerEvents> =
 // when message-button is clicked send update message to server
 const messageButton = document.querySelector("#message-button");
 messageButton?.addEventListener("click", () => {
-  socket.emit("update", "animal");
+  socket.emit("update", "species");
+});
+
+socket.on("addAnimal", (data) => {
+  console.log(data);
+  // open modal
+  targetModal.innerHTML = createMessageModal(data);
+  myModal.show();
+  setTimeout(() => {
+    myModal.hide();
+  }, 2000);
+});
+
+socket.on("addSpecies", (data) => {
+  console.log(data);
+  // open modal
+  targetModal.innerHTML = createMessageModal(data);
+  myModal.show();
+  setTimeout(() => {
+    myModal.hide();
+  }, 2000);
 });
