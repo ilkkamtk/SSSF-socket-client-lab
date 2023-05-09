@@ -6,7 +6,4 @@ export default {
       targets: [{ src: "node_modules/leaflet/dist/images/*", dest: "./" }],
     }),
   ],
-  build: {
-    outDir: "docs",
-  },
 };
