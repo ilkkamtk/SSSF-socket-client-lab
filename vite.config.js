@@ -1,9 +1,12 @@
-import { viteStaticCopy } from 'vite-plugin-static-copy';
+import { viteStaticCopy } from "vite-plugin-static-copy";
 
 export default {
   plugins: [
     viteStaticCopy({
-      targets: [{ src: 'node_modules/leaflet/dist/images/*', dest: './' }],
+      targets: [{ src: "node_modules/leaflet/dist/images/*", dest: "./" }],
     }),
   ],
+  build: {
+    outDir: "docs",
+  },
 };
